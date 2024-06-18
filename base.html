@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
+  </head>
+  <body>
+
+<!DOCTYPE html>
+<html>
+<body>
+<link rel="stylesheet" href="index.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+<img class="logo" src="past-innovation-logo.png"/>
+<h1>Welcome! Today is {% now "l, F j" %}</h1>
+{% if result.announcement %}
+    <p>{{ result.announcement.0.announcement }}</p>
+{% endif %}
+<a class="menu-button" href="{% url 'today' %}">Today</a>
+<a class="menu-button" href="{% url 'tomorrow' %}">Tomorrow</a>
+<a class="menu-button" href="{% url 'lending' %}">All</a>
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Lesson Details:</h1>
+
+<table>
+  <tr>
+    <th><h2>Date</h2></th>
+    <th><h2>Activity</h2></th>
+    <th><h2>When</h2></th>
+    <th><h2>Location</h2></th>
+    <th><h2>Description</h2></th>
+  </tr>
+
+  <tr>
+{% if result %}
+  <td><h3>{{ result.date|date:"M d, Y" }}</h3></td>
+ <td><h3>{{ result.title }}</h3></td>
+ <td><h3>{{ result.time|date:"H:i"}}</h3></td>
+ <td><h3><a href="{{ lesson.link }}">Click to join</a></h3></td>
+  <td><p>{{ result.description }}</p></td>
+{% endif %}
+</tr>
+</table>
+
+</body>
+
+{% endblock %}

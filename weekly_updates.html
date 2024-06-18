@@ -1,0 +1,5 @@
+<h1>Last update by: {{ last_update.user }} made {{ last_update.date|date:"M d, Y H:i" }}</h1>
+<form method="POST" action="{% url 'update_weekly' %}">
+    {% csrf_token %}
+    <button type="submit">Update</button>
+</form>
